@@ -1,10 +1,10 @@
 ---
-title: Jogo dos Reflexos
+title: Jogo da Pinha
 description: Tutorial de jogo dos reflexos para micro:bit
-author: João Francisco - Br.ino
+author: Br.ino
 ---
 
-# Jogo dos Reflexos
+# Jogo da Pinha
 
 ## {Passo 1}
 
@@ -212,6 +212,10 @@ basic.forever(function () {
     }
 })
 ```
+
+## {Passo 19}
+
+Com o Jogo finalizado, agora conecte seu @boardname e clique em Baixar, e divirta-se
 
 ```template
 basic.forever(function() {})
