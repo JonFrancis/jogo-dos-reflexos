@@ -1,88 +1,74 @@
----
-title: Jogo da Pinha
-description: Tutorial de jogo dos reflexos para micro:bit
-author: Br.ino
----
-
 # Jogo da Pinha
 
-## {Passo 1}
+## {Criando Variáveis}
 
-Para começar vamos criar nossas ``||variables:Variáveis||`` que é o que será modificado ou controlado durante nosso Jogo.
-Na categoria ``||variables:Variáveis||``.
-Clique em ``||variables:Fazer uma Variável||`` e nomeie a ``||variables:Variável||`` como ``||variables:Sabrina||``.
+Para começar vamos criar nossas ``||variables:Variáveis||``, que são os valores que serão modificados ou controlados durante o nosso jogo.  
+Na categoria ``||variables:Variáveis||``, clique em ``||variables:Fazer uma variável||`` e nomeie a ``||variables:Variável||`` como ``||variables:Sabrina||``.
 
-## {Passo 2}
+## {Criando Variáveis}
 
-Na categoria ``||variables:Variáveis||``.
-Clique em ``||variables:Fazer uma Variável||`` e nomeie a ``||variables:Variável||`` como ``||variables:Pinha||``.
+Na categoria ``||variables:Variáveis||``, clique em ``||variables:Fazer uma variável||`` e nomeie a ``||variables:Variável||`` como ``||variables:Pinha||``.
 
-## {Passo 3}
+## {Criando Variáveis}
 
-Agora vamos posicionar ``||variables:Sabrina||`` no nosso @boardname.
-Pegue um bloco ``||basic:no iniciar||`` em ``||basic:Básico||``.
-Ainda na categoria ``||variables:Variáveis||``.
-Arraste o bloco que começa com ``||variables:definir||`` para dentro do nosso bloco ``||basic:no iniciar||``.
-Em seguida dentro de ``||variables:definir||`` mude a ``||variables:Variável||`` para ``||variables:Sabrina||``.
+Agora vamos posicionar ``||variables:Sabrina||`` no nosso @boardname@.  
+Pegue um bloco ``||basic:no iniciar||`` em ``||basic:Básico||``.  
+Ainda na categoria ``||variables:Variáveis||``, arraste o bloco que começa com ``||variables:definir||`` para dentro do nosso bloco ``||basic:no iniciar||``.  
+Em seguida, dentro de ``||variables:definir||``, mude a ``||variables:Variável||`` para ``||variables:Sabrina||``.
+
 ```blocks
 let Sabrina = 0
 ```
 
-## {Passo 4}
+## {Criando Variáveis}
 
-Abaixo de todas as categorias temos um botão escrito ``||advanced:Avançado||`` e ao apertar podemos encontrar a categoria ``||game:Jogo||``.
-Na categoria ``||game:Jogo||``.
-Arraste o bloco ``||game:criar sprite em: x:2 y:2||`` para dentro do nosso bloco ``||variables:definir||``.
-Mude o y para 4.
+Abaixo de todas as categorias temos o botão ``||advanced:Avançado||`` e, ao clicar, encontramos a categoria ``||game:Jogo||``.  
+Na categoria ``||game:Jogo||``, arraste o bloco ``||game:criar sprite em x:2 y:2||`` para dentro do nosso bloco ``||variables:definir||``.  
+Mude o **y** para **4**.
+
 ```blocks
 let Sabrina = game.createSprite(2, 4)
 ```
-## {Passo 5}
 
-Olhe o simulador @boardname@ na tela. Já podemos ver um dos LEDS acesos ao centro na parte de baixo, esse led é o que iremos controlar no jogo.
+## {Criando Variáveis}
 
-## {Passo 6}
+Faremos os mesmos passos para a criação da ``||variables:Pinha||``.  
+Na categoria ``||variables:Variáveis||``, use o bloco que começa com ``||variables:definir||`` dentro do nosso bloco ``||basic:no iniciar||``.  
+Em seguida, em ``||variables:definir||``, mude a ``||variables:Variável||`` para ``||variables:Pinha||``.
 
-Faremos os mesmos passos para a criação da ``||variables:Pinha||``.
-Na categoria ``||variables:Variáveis||`` use o bloco que começa com ``||variables:definir||`` para dentro do nosso bloco ``||basic:no iniciar||``.
-Em seguida dentro de ``||variables:definir||`` mude a ``||variables:Variável||`` para ``||variables:Pinha||``.
 ```blocks
 let Sabrina = game.createSprite(2, 4)
 let Pinha = 0
 ```
 
-## {Passo 7}
+## {Criando Variáveis}
 
-Na categoria ``||game:Jogo||``.
-Arraste o bloco ``||game:criar sprite em: x:2 y:2||`` para dentro do nosso bloco ``||variables:definir||``.
-Mude o y para 0.
+Na categoria ``||game:Jogo||``, arraste o bloco ``||game:criar sprite em x:2 y:2||`` para dentro do nosso bloco ``||variables:definir||``.  
+Mude o **y** para **0**.
+
 ```blocks
 let Pinha = game.createSprite(2, 0)
 let Sabrina = game.createSprite(2, 4)
 ```
 
-## {Passo 8}
+## {Criando Variáveis}
 
-Na categoria ``||math:Matemática||``.
-Mude o y para 0.
-Arraste o bloco ``||math:escolher aleatório||`` para dentro do x do nosso bloco ``||game:criar sprite em||``.
-E no bloco ``||math:escolher aleatório||`` mude o segundo número para 4.
+Na categoria ``||math:Matemática||``, arraste o bloco ``||math:escolher aleatório||`` para o **x** do nosso bloco ``||game:criar sprite em||``.  
+No bloco ``||math:escolher aleatório||``, mude o segundo número para **4**.  
+Assim a ``||variables:Pinha||`` pode nascer em qualquer coluna de **0** a **4**.
+
 ```blocks
 let Pinha = game.createSprite(randint(0, 4), 0)
 let Sabrina = game.createSprite(2, 4)
 ```
 
-## {Passo 9}
+## {Movimentação}
 
-Olhe o simulador @boardname@ na tela. Já podemos ver dois dos LEDS acesos, o de cima será a ``||variables:Pinha||`` e o de baixo a ``||variables:Sabrina||``.
-
-## {Passo 10}
-
-Agora vamos fazer o código para movimentação.
-Para isso, adicione o bloco ``||input:no botão pressionado||`` e coloque o botão B.
-E dentro dele adicione o bloco que termina em ``||game:sprite mover por 1||``.
-E mude sprite para ``||variables:Sabrina||``.
-Assim já conseguimos nos movimentar para o lado esquerdo.
+Agora vamos fazer o código para movimentação da ``||variables:Sabrina||``.  
+Adicione o bloco ``||input:no botão pressionado||`` e escolha o botão **B**.  
+Dentro dele, adicione o bloco ``||game:sprite mover por 1||``.  
+Mude **sprite** para ``||variables:Sabrina||``.  
+Assim, com **B**, conseguimos nos movimentar para a **direita**.
 
 ```blocks
 let Sabrina = game.createSprite(2, 4)
@@ -91,12 +77,11 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## {Passo 11}
+## {Movimentação}
 
-Para fazer a movimentação para o lado direito adicione o bloco ``||input:no botão pressionado||`` e coloque o botão A.
-E dentro dele adicione o bloco que termina em ``||game:sprite mover por 1||``. 
-Troque o 1 por -1.
-E mude sprite para ``||variables:Sabrina||``.
+Para se movimentar para a **esquerda**, adicione outro bloco ``||input:no botão pressionado||`` e escolha o botão **A**.  
+Dentro dele, adicione o bloco ``||game:sprite mover por 1||`` e troque o **1** por **-1**.  
+Mude **sprite** para ``||variables:Sabrina||``.
 
 ```blocks
 let Sabrina = game.createSprite(2, 4)
@@ -108,13 +93,11 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## {Passo 12}
+## {Movimentação}
 
-Para fazer a movimentação do objeto na categoria ``||basci:Básico||`` adicione o bloco ``||basic:sempre||``.
-Dentro dele adicione o bloco ``||basic:pausa(ms)||`` e mude o número para 500.
-Logo abaixo adicione o bloco que termina em ``||game:sprite alterar x por 1||``.
-Mude sprite para ``||variables:Pinha||``.
-E mude o x para y.
+Para fazer a ``||variables:Pinha||`` descer, na categoria ``||basic:Básico||`` adicione o bloco ``||basic:sempre||``.  
+Dentro dele, adicione o bloco ``||basic:pausa (ms)||`` e mude o número para **500**.  
+Logo abaixo, adicione o bloco ``||game:sprite alterar x por 1||``, mude **sprite** para ``||variables:Pinha||`` e troque **x** por **y**.
 
 ```blocks
 let Pinha = game.createSprite(randint(0, 4), 0)
@@ -124,12 +107,12 @@ basic.forever(function () {
 })
 ```
 
-## {Passo 13}
+## {Movimentação}
 
-Agora que já temos as movimentações, podemos ir para colisão.
-``||variables:Sabrina||`` precisa desviar das ``||variables:Pinhas||``.
-Para isso dentro do bloco ``||basic:sempre||`` logo abaixo do bloco de ``||game:alterar||`` devemos adicionar da aba ``||logic:Lógica||`` o bloco ``||logic:se <verdadeiro> então||``.
-E dentro desse bloco iremos colocar da aba ``||game:Jogo||`` o bloco ``||game:fim do jogo||``.
+Agora que já temos as movimentações, vamos verificar a **colisão**.  
+A ``||variables:Sabrina||`` precisa **desviar** das ``||variables:Pinhas||``.  
+Para isso, dentro do bloco ``||basic:sempre||``, logo abaixo do bloco de ``||game:alterar||``, adicione da aba ``||logic:Lógica||`` o bloco ``||logic:se <verdadeiro> então||``.  
+E dentro desse bloco vamos colocar da aba ``||game:Jogo||`` o bloco ``||game:fim do jogo||``.
 
 ```blocks
 basic.forever(function () {
@@ -139,11 +122,11 @@ basic.forever(function () {
 })
 ```
 
-## {Passo 14}
+## {Colisão}
 
-A condição que precisa ser verdadeira para que o jogo termine é: se ``||variables:Sabrina||`` encostar na ``||variables:Pinha||``.
-Para isso vamos pegar da aba ``||game:Jogo||`` o bloco ``||game:is sprite touching||`` e colocar dentro do Verdadeiro do bloco ``||logic:se||``.
-Agora basta trocar sprite por ``||game:Sabrina||`` e o bloco vazio vamos colocar a ``||variables:Pinha||`` que podemos pegar dentro do bloco ``||variables:Variáveis||``  
+A condição para o jogo terminar é: se ``||variables:Sabrina||`` encostar na ``||variables:Pinha||``.  
+Pegue da aba ``||game:Jogo||`` o bloco ``||game:is sprite touching||`` e coloque dentro do **verdadeiro** do bloco ``||logic:se||``.  
+Troque **sprite** por ``||variables:Sabrina||`` e, no espaço ao lado, coloque a variável ``||variables:Pinha||`` que está em ``||variables:Variáveis||``.
 
 ```blocks
 let Pinha = game.createSprite(randint(0, 4), 0)
@@ -155,11 +138,12 @@ basic.forever(function () {
 })
 ```
 
-## {Passo 15}
+## {Resetar a Pinha}
 
-Para finalizar, devemos fazer com que a ``||variables:Pinha||`` ao chegar na última linha, volte para cima novamente.
-Vamos colocar dentro do bloco ``||basic:sempre||`` e abaixo do bloco ``||logic:se||`` outro bloco ``||logic:se||``.
-Mas dessa vez a condição verdadeira será um bloco de comparação de igualdade, que podemos achar em ``||logic:Lógica||``
+Para finalizar, precisamos fazer com que a ``||variables:Pinha||``, ao chegar na última linha, **volte para cima** novamente.  
+Dentro do mesmo ``||basic:sempre||``, abaixo do primeiro ``||logic:se||``, adicione **outro** ``||logic:se||``.  
+Desta vez, a condição verdadeira será um **bloco de comparação de igualdade** (``==``) que está em ``||logic:Lógica||``.
+
 ```blocks
 basic.forever(function () {
     if (0 == 0) {
@@ -168,12 +152,13 @@ basic.forever(function () {
 })
 ```
 
-## {Passo 16}
+## {Resetar a Pinha}
 
-Devemos trocar o primeiro número 0 pelo bloco de ``||game:Jogo||`` ``||game:sprite x||``.
-Agora podemos trocar "sprite" para nossa variável ``||variables:Pinha||`` e x devemos mudar para y.
-E o segundo 0 trocamos por 4.
-Assim o Jogo estará sempre verificando o y que diz qual fileira nossa ``||variables:Pinha||`` está, caso esteja na fileira 4, ou seja na última, devemos fazer com que ela volte para cima.
+Troque o primeiro **0** por ``||game:sprite x||`` da aba ``||game:Jogo||``.  
+Mude **sprite** para ``||variables:Pinha||`` e troque **x** por **y**.  
+Troque o segundo **0** por **4**.  
+Assim o jogo verifica se o **y** da ``||variables:Pinha||`` está na linha **4** (a última).  
+
 ```blocks
 let Pinha = game.createSprite(randint(0, 4), 0)
 basic.forever(function () {
@@ -183,40 +168,37 @@ basic.forever(function () {
 })
 ```
 
-## {Passo 17}
+## {Resetar a Pinha}
 
-Dentro do nosso último bloco ``||logic:se||`` vamos adicionar um bloco ``||basic:Básico||`` ``||basic:Pausa||``.
-E dois bloco de ``||game:Jogo||`` ``||game:sprite definir x para 0||`` e mudar sprite para ``||variables:Pinha||``.
+Dentro desse segundo ``||logic:se||``, adicione um ``||basic:pausa (ms)||`` para dar um tempinho.  
+Depois, vamos **resetar** a posição da ``||variables:Pinha||``: ela deve voltar para **cima** e nascer em uma **coluna aleatória**.  
+Para isso, use dois blocos ``||game:sprite definir … para …||`` da aba ``||game:Jogo||``.
+
+- No primeiro, mude para **definir y para 0**.  
+- No segundo, mude para **definir x** e coloque um ``||math:escolher aleatório 0 a 4||``.  
+
 ```blocks
 let Pinha = game.createSprite(randint(0, 4), 0)
 basic.forever(function () {
     if (Pinha.get(LedSpriteProperty.Y) == 4) {
         basic.pause(100)
-        Pinha.set(LedSpriteProperty.X, 0)
-        Pinha.set(LedSpriteProperty.X, 0)
+        Pinha.set(LedSpriteProperty.Y, 0)
+        Pinha.set(LedSpriteProperty.X, randint(0, 4))
     }
 })
 ```
 
-## {Passo 18}
+## {Resetar a Pinha}
 
-Agora vamos mudar o x do primeiro bloco ``||game:definir||`` para y.
-No segundo bloco ``||game:definir||`` devemos mudar o 0 para um bloco de ``||math:Matemática||`` o ``||math:escolher aleatório||`` e igual fizemos na criação da ``||variables:Pinha||`` trocar o último número por 4
-```blocks
-let Pinha = game.createSprite(randint(0, 4), 0)
-basic.forever(function () {
-    if (Pinha.get(LedSpriteProperty.Y) == 4) {
-        basic.pause(100)
-        Pinha.set(LedSpriteProperty.X, 0)
-        Pinha.set(LedSpriteProperty.Y, 4)
-    }
-})
-```
+Pronto.  
+Agora a ``||variables:Pinha||`` desce, e quando chega na última linha volta para cima em outra coluna.  
+Tente ajustar o tempo da ``||basic:pausa (ms)||`` para deixar o jogo mais fácil ou mais difícil.
 
-## {Passo 19}
+## {Finalizado}
 
-Com o Jogo finalizado, agora conecte seu @boardname e clique em Baixar, e divirta-se
+Com o jogo finalizado, conecte seu @boardname@ e clique em ``|Baixar|``.  
+Divirta-se!
 
 ```template
-basic.forever(function() {})
+basic.forever(function () { })
 ```
