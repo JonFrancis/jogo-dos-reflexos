@@ -1,8 +1,7 @@
 # Jogo da Pinha
 
 ## {Criando Variáveis}
-
-Para começar vamos criar nossas ``||variables:Variáveis||``, que são os valores que serão modificados ou controlados durante o nosso jogo.  
+ 
 Na categoria ``||variables:Variáveis||``, clique em ``||variables:Fazer uma variável||`` e nomeie a ``||variables:Variável||`` como ``||variables:Sabrina||``.
 
 ## {Criando Variáveis}
@@ -11,9 +10,8 @@ Na categoria ``||variables:Variáveis||``, clique em ``||variables:Fazer uma var
 
 ## {Criando Variáveis}
 
-Agora vamos posicionar ``||variables:Sabrina||`` no nosso @boardname@.  
 Pegue um bloco ``||basic:no iniciar||`` em ``||basic:Básico||``.  
-Ainda na categoria ``||variables:Variáveis||``, arraste o bloco que começa com ``||variables:definir||`` para dentro do nosso bloco ``||basic:no iniciar||``.  
+Na categoria ``||variables:Variáveis||``, arraste o bloco ``||variables:definir||`` para dentro do nosso bloco ``||basic:no iniciar||``.  
 Em seguida, dentro de ``||variables:definir||``, mude a ``||variables:Variável||`` para ``||variables:Sabrina||``.
 
 ```blocks
@@ -31,8 +29,7 @@ let Sabrina = game.createSprite(2, 4)
 ```
 
 ## {Criando Variáveis}
-
-Faremos os mesmos passos para a criação da ``||variables:Pinha||``.  
+  
 Na categoria ``||variables:Variáveis||``, use o bloco que começa com ``||variables:definir||`` dentro do nosso bloco ``||basic:no iniciar||``.  
 Em seguida, em ``||variables:definir||``, mude a ``||variables:Variável||`` para ``||variables:Pinha||``.
 
@@ -63,8 +60,7 @@ let Sabrina = game.createSprite(2, 4)
 ```
 
 ## {Movimentação}
-
-Agora vamos fazer o código para movimentação da ``||variables:Sabrina||``.  
+ 
 Adicione o bloco ``||input:no botão pressionado||`` e escolha o botão **B**.  
 Dentro dele, adicione o bloco ``||game:sprite mover por 1||``.  
 Mude **sprite** para ``||variables:Sabrina||``.  
@@ -107,9 +103,8 @@ basic.forever(function () {
 })
 ```
 
-## {Movimentação}
+## {Colisão}
 
-Agora que já temos as movimentações, vamos verificar a **colisão**.  
 A ``||variables:Sabrina||`` precisa **desviar** das ``||variables:Pinhas||``.  
 Para isso, dentro do bloco ``||basic:sempre||``, logo abaixo do bloco de ``||game:alterar||``, adicione da aba ``||logic:Lógica||`` o bloco ``||logic:se <verdadeiro> então||``.  
 E dentro desse bloco vamos colocar da aba ``||game:Jogo||`` o bloco ``||game:fim do jogo||``.
@@ -124,7 +119,6 @@ basic.forever(function () {
 
 ## {Colisão}
 
-A condição para o jogo terminar é: se ``||variables:Sabrina||`` encostar na ``||variables:Pinha||``.  
 Pegue da aba ``||game:Jogo||`` o bloco ``||game:is sprite touching||`` e coloque dentro do **verdadeiro** do bloco ``||logic:se||``.  
 Troque **sprite** por ``||variables:Sabrina||`` e, no espaço ao lado, coloque a variável ``||variables:Pinha||`` que está em ``||variables:Variáveis||``.
 
@@ -184,9 +178,10 @@ basic.forever(function () {
 ## {Resetar a Pinha}
 
 Para finalizar, precisamos fazer com que a ``||variables:Pinha||``, ao chegar na última linha, **volte para cima** novamente.  
+
+## {Resetar a Pinha}
 Dentro desse segundo ``||logic:se||``, adicione um ``||basic:pausa (ms)||`` para dar um tempinho.  
-Depois, vamos **resetar** a posição da ``||variables:Pinha||``: ela deve voltar para **cima** e nascer em uma **coluna aleatória**.  
-Para isso, use dois blocos ``||game:sprite definir … para …||`` da aba ``||game:Jogo||``.
+Use dois blocos ``||game:sprite definir … para …||`` da aba ``||game:Jogo||``.
 
 - No primeiro, mude para **definir y para 0**.  
 - No segundo, mude para **definir x** e coloque um ``||math:escolher aleatório 0 a 4||``.  
