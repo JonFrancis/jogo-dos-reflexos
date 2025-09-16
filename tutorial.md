@@ -138,9 +138,9 @@ basic.forever(function () {
 })
 ```
 
-## {Resetar a Pinha}
+## {Pontuação}
 
-Para finalizar, precisamos fazer com que a ``||variables:Pinha||``, ao chegar na última linha, **volte para cima** novamente.  
+Vamos aumentar os pontos quando a ``||variables:Pinha||`` chegar na última linha.
 Dentro do mesmo ``||basic:sempre||``, abaixo do primeiro ``||logic:se||``, adicione **outro** ``||logic:se||``.  
 Desta vez, a condição verdadeira será um **bloco de comparação de igualdade** (``==``) que está em ``||logic:Lógica||``.
 
@@ -168,8 +168,22 @@ basic.forever(function () {
 })
 ```
 
+## {Pontuação}
+
+Dentro do bloco de ``||logic:se||`` adicione o bloco ``||game:alterar pontuação em||``
+
+```blocks
+let Pinha = game.createSprite(randint(0, 4), 0)
+basic.forever(function () {
+    if (Pinha.get(LedSpriteProperty.Y) == 4) {
+        game.addScore(1)
+    }
+})
+```
+
 ## {Resetar a Pinha}
 
+Para finalizar, precisamos fazer com que a ``||variables:Pinha||``, ao chegar na última linha, **volte para cima** novamente.  
 Dentro desse segundo ``||logic:se||``, adicione um ``||basic:pausa (ms)||`` para dar um tempinho.  
 Depois, vamos **resetar** a posição da ``||variables:Pinha||``: ela deve voltar para **cima** e nascer em uma **coluna aleatória**.  
 Para isso, use dois blocos ``||game:sprite definir … para …||`` da aba ``||game:Jogo||``.
@@ -196,7 +210,9 @@ Tente ajustar o tempo da ``||basic:pausa (ms)||`` para deixar o jogo mais fácil
 
 ## {Finalizado}
 
-Com o jogo finalizado, conecte seu @boardname@ e clique em ``|Baixar|``.  
+Com o jogo finalizado, conecte seu @boardname@ e clique em ``|Baixar|``.
+Para aumentar a dificuldade basta diminuir a ``||basic:pausa||`` que fica logo no começo do sempre.
+**Dica** 100 fica muito difícil.
 Divirta-se!
 
 ```template
