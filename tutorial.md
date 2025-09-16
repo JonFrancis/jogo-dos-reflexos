@@ -20,6 +20,7 @@ Clique em ``||variables:Fazer uma Variável||`` e nomeie a ``||variables:Variáv
 ## {Passo 3}
 
 Agora vamos posicionar ``||variables:Sabrina||`` no nosso @boardname.
+Pegue um bloco ``||basic:no iniciar||`` em ``||basic:Básico||``.
 Ainda na categoria ``||variables:Variáveis||``.
 Arraste o bloco que começa com ``||variables:definir||`` para dentro do nosso bloco ``||basic:no iniciar||``.
 Em seguida dentro de ``||variables:definir||`` mude a ``||variables:Variável||`` para ``||variables:Sabrina||``.
